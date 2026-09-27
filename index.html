@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Free SME Cash Flow Stress Test | Find Your Cash Leaks</title>
+<meta name="description" content="Find out where your business may be losing cash. Take the free 5-minute SME Cash Stress Test. No spreadsheet or accounting software required." />
+<link rel="canonical" href="https://smeCashStressTest.com/" />
+<meta name="theme-color" content="#0f2b46" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Free SME Cash Flow Stress Test" />
+<meta property="og:description" content="Find out where your business may be losing cash. Free 5-minute assessment." />
+<meta property="og:url" content="https://smeCashStressTest.com/" />
+<meta property="og:site_name" content="SME Cash Stress Test" />
+
+<link rel="stylesheet" href="/styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label="SME Cash Stress Test home">
+      <span class="logo-mark">$</span>
+      <span class="logo-text">Cash Stress Test</span>
+    </a>
+    <a href="#start" class="btn btn-ghost nav-cta" data-cta="header">Start Test</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= LANDING ================= -->
+<section id="landing" class="view active">
+  <div class="container hero">
+    <p class="eyebrow">For Australian SME owners</p>
+    <h1>Your business can be profitable and still run out of cash.</h1>
+    <p class="lede">Find out where your business may be losing cash — in about 5 minutes.</p>
+    <p class="badge">5-minute free assessment</p>
+    <a href="#start" id="start" class="btn btn-primary btn-large" data-cta="hero">
+      Start the Free Cash Stress Test
+    </a>
+    <p class="reassure">No credit card. No accounting software connection. No obligation.</p>
+  </div>
+
+  <div class="container section">
+    <h2>What does the test look at?</h2>
+    <ul class="feature-grid">
+      <li><span class="dot"></span> Cash reserves</li>
+      <li><span class="dot"></span> Customer payments</li>
+      <li><span class="dot"></span> Profit margins</li>
+      <li><span class="dot"></span> Inventory</li>
+      <li><span class="dot"></span> Debt and financial commitments</li>
+    </ul>
+  </div>
+
+  <div class="container section">
+    <h2>Built for business owners</h2>
+    <ul class="plain-list">
+      <li>No complicated accounting terminology.</li>
+      <li>No spreadsheet required.</li>
+      <li>No sales call required.</li>
+    </ul>
+    <a href="#start" class="btn btn-primary btn-large" data-cta="mid">Start the Free Test</a>
+  </div>
+</section>
+
+<!-- ================= QUIZ ================= -->
+<section id="quiz" class="view">
+  <div class="container quiz-wrap">
+    <div class="progress-header">
+      <div class="progress-meta">
+        <span id="step-label">Step 1 of 15</span>
+        <span id="step-pct">7%</span>
+      </div>
+      <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+    </div>
+
+    <form id="quiz-form" novalidate>
+      <div id="question-container"></div>
+
+      <div class="quiz-nav">
+        <button type="button" id="back-btn" class="btn btn-ghost" hidden>Back</button>
+        <button type="button" id="next-btn" class="btn btn-primary" disabled>Next</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ================= LEAD CAPTURE ================= -->
+<section id="capture" class="view">
+  <div class="container narrow">
+    <h2>Where should we send your full Cash Stress Report?</h2>
+    <p class="lede">You'll see your score immediately. We'll email you the full breakdown.</p>
+
+    <form id="capture-form" novalidate>
+      <label for="first_name">First name</label>
+      <input id="first_name" name="first_name" type="text" autocomplete="given-name" required maxlength="80" />
+
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="email" required maxlength="200" />
+
+      <label for="revenue_band">Business size</label>
+      <select id="revenue_band" name="revenue_band" required>
+        <option value="">Select…</option>
+        <option value="Under $500k">Under $500k</option>
+        <option value="$500k–$1m">$500k–$1m</option>
+        <option value="$1m–$5m">$1m–$5m</option>
+        <option value="$5m–$20m">$5m–$20m</option>
+        <option value="Over $20m">Over $20m</option>
+      </select>
+
+      <label class="checkbox">
+        <input type="checkbox" id="consent" name="consent" />
+        <span>I agree to receive my assessment and occasional business-finance resources. I can unsubscribe at any time.</span>
+      </label>
+
+      <p id="capture-error" class="error" role="alert" hidden></p>
+
+      <button type="submit" class="btn btn-primary btn-large btn-block" id="capture-submit">
+        Show My Results
+      </button>
+      <p class="fineprint">
+        This assessment is for general educational and informational purposes only. It is not accounting, financial, legal, insolvency or investment advice.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section id="results" class="view">
+  <div class="container">
+    <h2>Your Cash Stress Score</h2>
+    <div class="score-hero">
+      <div class="score-number"><span id="score-total">0</span><span class="score-denom">/100</span></div>
+      <div id="score-category" class="score-category">—</div>
+    </div>
+    <p id="score-summary" class="lede"></p>
+
+    <h3>Category breakdown</h3>
+    <ul id="category-list" class="category-list"></ul>
+
+    <h3>Your biggest potential cash leaks</h3>
+    <ol id="issues-list" class="issues-list"></ol>
+
+    <div class="divider"></div>
+
+    <div class="soft-cta">
+      <h3>Want to understand what's actually causing the problem?</h3>
+      <p>Our <strong>Financial Rescue Report</strong> provides a deeper review of your business numbers and identifies the areas most likely to be consuming cash.</p>
+      <button type="button" id="waitlist-btn" class="btn btn-primary">Join the Waitlist</button>
+      <p id="waitlist-confirm" class="fineprint" hidden>Thanks — you're on the list. We'll be in touch.</p>
+    </div>
+
+    <div class="divider"></div>
+    <p class="fineprint">
+      This assessment is for general educational and informational purposes only. It is not accounting, financial, legal, insolvency or investment advice and should not be relied upon as a substitute for professional advice.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> SME Cash Stress Test. Educational tool only.</p>
+    <nav>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/app.js" defer></script>
+</body>
+</html>

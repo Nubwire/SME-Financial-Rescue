@@ -1,0 +1,26 @@
+name = "sme-financial-rescue"
+main = "worker/index.js"
+compatibility_date = "2024-09-23"
+
+# Serves everything in public/ as static assets. Any request that doesn't
+# match a file in public/ (e.g. /api/lead) falls through to the Worker
+# script in worker/index.js automatically.
+[assets]
+directory = "public"
+binding = "ASSETS"
+
+# D1 database binding — create the DB first:
+#   wrangler d1 create sme-cash-stress-test
+# then paste the returned database_id below. When deploying via the
+# Cloudflare dashboard's "Import a repository" flow, you can also add
+# this binding afterwards from the Worker's Settings > Bindings tab
+# instead of editing this file.
+[[d1_databases]]
+binding = "DB"
+database_name = "sme-cash-stress-test"
+database_id = "YOUR_D1_DATABASE_ID"
+
+# Not needed for dashboard/Git deploys (the dashboard already knows which
+# account you're deploying to). Only required for `wrangler deploy` from
+# your own machine via the CLI.
+# account_id = "YOUR_CLOUDFLARE_ACCOUNT_ID"
