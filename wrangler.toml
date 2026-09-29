@@ -18,7 +18,7 @@ binding = "ASSETS"
 [[d1_databases]]
 binding = "DB"
 database_name = "sme-cash-stress-test"
-database_id = "YOUR_D1_DATABASE_ID"
+database_id = "database_id = "f0d1e050-fec0-4cd5-a91b-a16b63fdefef""
 
 # Not needed for dashboard/Git deploys (the dashboard already knows which
 # account you're deploying to). Only required for `wrangler deploy` from
